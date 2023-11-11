@@ -1,0 +1,34 @@
+{
+  "name": "romil_tiwari_002771759_02",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha integration-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1488.0",
+    "bcrypt": "^5.1.1",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "hot-shots": "^10.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mailgun-js": "^0.22.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.1",
+    "sequelize": "^6.33.0",
+    "sequelize-cli": "^6.6.1",
+    "why-is-node-running": "^2.2.2",
+    "winston": "^3.11.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.2.0"
+  }
+}

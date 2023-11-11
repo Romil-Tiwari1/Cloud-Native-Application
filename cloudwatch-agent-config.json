@@ -1,0 +1,49 @@
+{
+  "agent": {
+    "metrics_collection_interval": 60,
+    "run_as_user": "cwagent"
+  },
+  "metrics": {
+    "metrics_collected": {
+      "statsd": {
+        "service_address": ":8125",
+        "metrics_collection_interval": 10,
+        "metrics_aggregation_interval": 60
+      }
+    },
+    "append_dimensions": {
+      "AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+      "ImageId": "${aws:ImageId}",
+      "InstanceId": "${aws:InstanceId}",
+      "InstanceType": "${aws:InstanceType}"
+    }
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/var/log/userdata.log",
+            "log_group_name": "webapp-logs",
+            "log_stream_name": "{instance_id}/userdata.log",
+            "timezone": "Local"
+          },
+          {
+            "file_path": "/var/log/webapp/access.log",
+            "log_group_name": "webapp-access-logs",
+            "log_stream_name": "{instance_id}/access.log",
+            "timezone": "Local"
+          },
+          {
+            "file_path": "/var/log/webapp/application.log",
+            "log_group_name": "webapp-application-logs",
+            "log_stream_name": "{instance_id}/application.log",
+            "timezone": "Local"
+          }
+        ]
+      }
+    },
+    "log_stream_name": "{instance_id}",
+    "force_flush_interval": 5
+  }
+}
